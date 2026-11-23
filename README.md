@@ -2,7 +2,8 @@
 
 Личное приложение для учёта денег: **iPhone + Windows, офлайн, без сервера, без аккаунта, без платных сервисов.**
 
-**Статус: локальный MVP реализован.** Все данные хранятся только в IndexedDB браузера устройства.
+**Статус: локальный MVP реализован и опубликован** — <https://maxgloshin.github.io/Financial/>.
+Все данные хранятся только в IndexedDB браузера устройства.
 Синхронизации между устройствами нет — перенос данных через резервные копии (JSON).
 
 ## Что уже работает (этап 1 — локальный MVP)
@@ -51,11 +52,12 @@ npm run typecheck
 
 ## Публикация на GitHub Pages
 
-Репозиторий и деплой создаются только с вашего явного согласия. План:
+Опубликовано: <https://maxgloshin.github.io/Financial/> (репозиторий <https://github.com/MaxGloshin/Financial>).
 
-- GitHub Actions (`deploy.yml`): build с `VITE_BASE=/<repo>/` → deploy в Pages.
+- GitHub Actions (`deploy.yml`): `npm test` → build с `VITE_BASE=/Financial/` → deploy в Pages.
+- CI (`ci.yml`): typecheck, тесты и сборка на каждый push и pull request.
 - Маршрутизация — HashRouter, поэтому 404-редиректы не нужны; `.nojekyll` в комплекте.
-- HTTPS выдаёт GitHub автоматически; SW работает, приложение полностью офлайн.
+- HTTPS выдаёт GitHub автоматически; Service Worker кеширует оболочку, приложение открывается офлайн.
 
 ## Скриншоты
 
