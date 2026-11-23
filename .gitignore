@@ -1,0 +1,10 @@
+node_modules/
+data/
+backups/
+web/dist/
+.env.local
+.env
+*.log
+tools/shortcut-probe/probe-log.jsonl
+.DS_Store
+Thumbs.db
