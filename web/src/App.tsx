@@ -86,7 +86,6 @@ function AppRoutes() {
           />
         </Route>
       </Routes>
-      <UpdatePrompt />
     </>
   );
 }
@@ -97,6 +96,8 @@ export default function App() {
       <AppProvider>
         <ToastProvider>
           <AppRoutes />
+          {/* Registered even before onboarding: offline work must not depend on it. */}
+          <UpdatePrompt />
         </ToastProvider>
       </AppProvider>
     </HashRouter>
